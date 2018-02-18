@@ -1,0 +1,26 @@
+{
+  "name": "concept",
+  "version": "1.0.0",
+  "description": "Concept extraction from sentence",
+  "main": "concept.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "string-similarity": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dtanguy/concept.git"
+  },
+  "author": "dtanguy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dtanguy/concept/issues"
+  },
+  "homepage": "https://github.com/Dtanguy/concept#readme"
+}
