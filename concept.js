@@ -189,12 +189,15 @@ function generateArray(str){
 
 /* if the array contain at least one element of the other array */
 function contain(gArray, keyWord){
+	if(!gArray || !keyWord || keyWord.length == 0 || gArray.length ==0){
+		return false;
+	}
 	for(var i = 0; i < keyWord.length; i++){
 		keyWord[i] = RemoveAccents(keyWord[i].toLowerCase());
 	}
 	for(var i = 0; i < gArray.length; i++){
-		var res = stringSimilarity.findBestMatch(gArray[i], keyWord).bestMatch;
-		if (res.rating > 0.7) {
+		var res = stringSimilarity.findBestMatch(gArray[i], keyWord).bestMatch;		
+		if (res && res.rating > 0.7) {
 			return true;
 		}
 	}
@@ -240,6 +243,18 @@ function RemoveAccents(strAccents) {
 }
 
 
+function strcmp(str1, str2){
+	if(!str1 || !str2){
+		return 0;
+	}
+	var str3 = [];
+	str3.push(str2);
+	var res = stringSimilarity.findBestMatch(str1, str3).bestMatch;
+	return res.rating;
+}
+
+
+module.exports.strcmp = strcmp;
 module.exports.init = init;
 module.exports.add = add;
 module.exports.rm = rm;
